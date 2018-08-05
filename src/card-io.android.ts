@@ -1,5 +1,6 @@
 import { Common, ScanCardIO, CardScanOption, CreditCard, CardType } from './card-io.common';
 import * as app from 'tns-core-modules/application';
+import { Color } from 'tns-core-modules/color';
 
 declare var io;
 const CardIOActivity = io.card.payment.CardIOActivity;
@@ -110,7 +111,8 @@ export class CardIo extends Common implements ScanCardIO {
             }
 
             if (options.android.guideColor !== undefined) {
-                scanIntent.putExtra(CardIOActivity.EXTRA_GUIDE_COLOR, options.android.guideColor);
+                const color = new Color(options.android.guideColor).android;
+                scanIntent.putExtra(CardIOActivity.EXTRA_GUIDE_COLOR, color);
             }
 
             if (options.android.suppressConfirmation !== undefined) {

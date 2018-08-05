@@ -16,10 +16,11 @@ export class HelloWorldModel extends Observable {
                 requireExpiry: true,
                 requireCvv: true,
                 requirePostalCode: false,
-                returnCardImage: true
+                returnCardImage: true,
+                guideColor: "#FF0000"
             }
         }).then((result: CreditCard) => {
-            console.log("Result >>> ", result);
+            console.log("RESULT >>> ", result.cardType.imageBitmap);
         }, error => {
             console.log("ERROR >>> ", error);
         });

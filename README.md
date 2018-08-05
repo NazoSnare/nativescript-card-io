@@ -66,7 +66,7 @@ Start the scanning process
 | languageOrLocale?: string | | The preferred language for all strings appearing in the user interface. If not set, or if set to null, defaults to the device's current language setting. Can be specified as a language    code ("en", "fr", "zh-Hans", etc.) or as a locale ("en_AU", "fr_FR", "zh-Hant_TW", etc.).
 | usePaypalActionbarIcon?: boolean | | Use the PayPal icon in the ActionBar.
 | keepApplicationTheme?: boolean |  | If this value is set to true, and the application has a theme, the theme will be set to the theme of the application.
-| guideColor?: number | Defaults to green. | Changes the color of the guide overlay on the camera.
+| guideColor?: string | Defaults to green. | Changes the color of the guide overlay on the camera.
 | suppressConfirmation?: boolean | | If this value is set to true the user will not be prompted to confirm their card number after processing.
 | suppressScan?: boolean | | Once a card image has been captured but before it has been processed, this value will determine whether to continue processing as usual.
 | returnCardImage?: boolean | | If this value is set to true the card image will be return as ImageSource
@@ -92,7 +92,7 @@ Start the scanning process
 | displayName(languageOrLocale: string): string | Get the Card Display Name             |
 | imageBitmap: any   | Get The ImageBitmap image after scan if `returnCardImage` is `true` |
 | numberLength: number | Get Card Number Length e.g(15 for AmEx, -1 for unknown, 16 for others.) |
-| content: string | Get CardType Details as string                                      |
+| content: string | Get Card Type Details                                      |
 
 ## Author
 

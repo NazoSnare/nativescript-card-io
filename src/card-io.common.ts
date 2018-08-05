@@ -25,7 +25,7 @@ export interface AndroidOption {
   languageOrLocale?: string;
   usePaypalActionbarIcon?: boolean;
   keepApplicationTheme?: boolean;
-  guideColor?: number;
+  guideColor?: string;
   suppressConfirmation?: boolean;
   suppressScan?: boolean;
   returnCardImage?: boolean;
