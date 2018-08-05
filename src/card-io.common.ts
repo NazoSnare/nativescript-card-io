@@ -1,28 +1,59 @@
 import { Observable } from 'tns-core-modules/data/observable';
 import * as app from 'tns-core-modules/application';
-import * as dialogs from 'tns-core-modules/ui/dialogs';
 
-export class Common extends Observable {
-  public message: string;
-
-  constructor() {
-    super();
-    this.message = Utils.SUCCESS_MSG();
-  }
-
-  public greet() {
-    return "Hello, NS";
-  }
+export interface ScanCardIO {
+  scan(options?: CardScanOption): Promise<any>;
 }
 
-export class Utils {
-  public static SUCCESS_MSG(): string {
-    let msg = `Your plugin is working on ${app.android ? 'Android' : 'iOS'}.`;
+export interface CardScanOption {
+  android?: AndroidOption;
+  ios?: any;
+}
 
-    setTimeout(() => {
-      dialogs.alert(`${msg} For real. It's really working :)`).then(() => console.log(`Dialog closed.`));
-    }, 2000);
+export interface AndroidOption {
+  noCamera?: boolean;
+  requireExpiry?: boolean;
+  unblurDigits?: number;
+  scanExpiry?: boolean;
+  requireCvv?: boolean;
+  requirePostalCode?: boolean;
+  restrictPostalCodeToNumericOnly?: boolean;
+  requireCardholderName?: boolean;
+  suppressManualEntry?: boolean;
+  useCardioLogo?: boolean;
+  hideCardioLogo?: boolean;
+  languageOrLocale?: string;
+  usePaypalActionbarIcon?: boolean;
+  keepApplicationTheme?: boolean;
+  guideColor?: number;
+  suppressConfirmation?: boolean;
+  suppressScan?: boolean;
+  returnCardImage?: boolean;
+}
 
-    return msg;
-  }
+export interface CreditCard {
+  describeContents: number;
+  cardType: CardType;
+  formattedCardNumber: string;
+  lastFourDigitsOfCardNumber: string;
+  redactedCardNumber: string;
+  isExpiryValid: boolean;
+  content: string;
+}
+
+export interface CardType {
+  cvvLength: number;
+  fromCardNumber(numStr: string): CardType;
+  fromString(typeStr: string): CardType;
+  displayName(languageOrLocale: string): string;
+  imageBitmap: any;
+  numberLength: number;
+  content: string;
+  valueOf(name: string): CardType;
+  values?: CardType[];
+}
+
+export class Common extends Observable {
+
+
 }

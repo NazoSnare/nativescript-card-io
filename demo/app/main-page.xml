@@ -1,6 +1,8 @@
 <Page xmlns="http://schemas.nativescript.org/tns.xsd" loaded="pageLoaded" class="page"
   xmlns:ui="nativescript-card-io">
-  <StackLayout class="p-20">
-    <Label text="{{ message }}" class="t-20 text-center c-black" textWrap="true"/>
-  </StackLayout>
+  <GridLayout>
+      <StackLayout horizontalAlignment="center" verticalAlignment="center">
+        <Button tap="{{ scan }}" text="Scan" height="70" width="150" />
+      </StackLayout>
+  </GridLayout>
 </Page>

@@ -1,6 +1,5 @@
-import { Common } from './card-io.common';
-export declare class CardIo extends Common {
-  // define your typings manually
-  // or..
-  // take the ios or android .d.ts files and copy/paste them here
+import { Common, ScanCardIO, CardScanOption } from './card-io.common';
+export declare class CardIo extends Common implements ScanCardIO {
+    constructor();
+    scan(options: CardScanOption): Promise<{}>;
 }
