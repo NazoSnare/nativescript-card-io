@@ -1,7 +1,7 @@
 {
     "name": "nativescript-card-io",
     "version": "1.0.0",
-    "description": "Your awesome NativeScript plugin.",
+    "description": "Card.io nativescript plugin",
     "main": "card-io",
     "typings": "index.d.ts",
     "nativescript": {
@@ -32,7 +32,13 @@
         "NativeScript",
         "JavaScript",
         "Android",
-        "iOS"
+        "iOS",
+        "Card.io",
+        "Card.io Scanner",
+        "Credit Card Scanner",
+        "Visa Card Scanner",
+        "Paypal Card Scanner",
+        "Scan credit cards"
     ],
     "author": {
         "name": "Your Name",
